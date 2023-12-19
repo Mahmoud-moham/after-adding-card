@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "Men's T-shirt",
+    "image": "./json_data/1.jpg",
+    "rating": 4.5,
+    "price": 300,
+    "category": "men"
+  },
+  {
+    "id": 2,
+    "title": "Women's Jeans",
+    "image": "./json_data/2.jpg",
+    "rating": 4.2,
+    "price": 450
+  },
+  {
+    "id": 3,
+    "title": "Sports Shoes",
+    "image": "/json_data/3.jpg",
+    "rating": 4.8,
+    "price": 600
+  },
+  {
+    "id": 4,
+    "title": "Leather Jacket",
+    "image": "/json_data/4.jpg",
+    "rating": 4.7,
+    "price": 800
+  },
+  {
+    "id": 5,
+    "title": "Casual Watch",
+    "image": "/json_data/5.jpg",
+    "rating": 4.3,
+    "price": 150
+  },
+  {
+    "id": 6,
+    "title": "Men's T-shirt",
+    "image": "/json_data/7.webp",
+    "rating": 4.5,
+    "price": 300
+  },
+  {
+    "id": 7,
+    "title": "Men's Jeans",
+    "image": "/json_data/6.webp",
+    "rating": 4.2,
+    "price": 450
+  },
+  {
+    "id": 8,
+    "title": "Men's Sports Shoes",
+    "image": "/json_data/8.jpg",
+    "rating": 4.8,
+    "price": 600
+  },
+  {
+    "id": 9,
+    "title": "Women's Blouse",
+    "image": "/json_data/9.webp",
+    "rating": 4.6,
+    "price": 350
+  },
+  {
+    "id": 10,
+    "title": "Women's Skirt",
+    "image": "/json_data/10.jpg",
+    "rating": 4.4,
+    "price": 500
+  },
+  {
+    "id": 11,
+    "title": "Women's High Heels",
+    "image": "/json_data/11.jpg",
+    "rating": 4.9,
+    "price": 700
+  },
+  {
+    "id": 12,
+    "title": "Kids' Cartoon T-shirt",
+    "image": "/json_data/12.jpg",
+    "rating": 4.7,
+    "price": 200
+  },
+  {
+    "id": 13,
+    "title": "Kids' Jeans",
+    "image": "/json_data/13.jpg",
+    "rating": 4.2,
+    "price": 350
+  },
+  {
+    "id": 14,
+    "title": "Kids' Sneakers",
+    "image": "/json_data/14.jpg",
+    "rating": 4.5,
+    "price": 400
+  }
+]

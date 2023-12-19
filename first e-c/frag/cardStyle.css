@@ -1,0 +1,67 @@
+header {
+    background-color: #445566;
+    display: inline-block;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    box-sizing: content-box;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    margin-right: 50%;
+    border-radius: 50%;
+
+}
+
+header div ul {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    list-style: none;
+    margin: 5px;
+}
+
+.link {
+    /* background-color: blue; */
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+}
+
+.link ul li a {
+    text-decoration: none;
+    color: orange;
+}
+
+/* header div ul */
+/* ==================================================== */
+.content {
+    background-color: pink;
+    width: 50%;
+    /* height: 400px; */
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.content .card-items {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-items: center;
+    margin: 10px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.content .card-items img {
+    width: 200px;
+    height: 200px;
+}

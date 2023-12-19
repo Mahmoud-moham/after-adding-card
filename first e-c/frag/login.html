@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csslogin.css">
+    <title>data json</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    </style>
+    <script src="https://kit.fontawesome.com/60b1ab9965.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="card">
+        <div class="row">
+            <div class="col-md-8 cart">
+                <div class="title">
+                    <div class="row">
+                        <div class="col">
+                            <h4><b>Shopping Cart</b></h4>
+                        </div>
+                        <div class="col align-self-center text-right text-muted"><span class="items-number">
+                            </span> items
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">13</span> &dollar;</p>
+                    <button id="btn-rm" onclick="removeParents(event.target)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">13</span> &dollar;</p>
+                    <button id="btn-rm" onclick="removeParents(event.target)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">13</span> &dollar;</p>
+                    <button id="btn-rm" onclick="removeParents(event.target)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">13</span> &dollar;</p>
+                    <button id="btn-rm" onclick="removeParents(event.target)"><i class="fa-solid fa-trash"></i></button>
+                </div>
+                <!-- <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">15</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">10</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">15</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">13</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div>
+                <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">15</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div> -->
+                <!-- <div class="row row-elements">
+                    <img src="image/10.jpg" alt="">
+                    <p class="price"><span class="number-price">15</span> &dollar;</p>
+
+                    <button><i class="fa-solid fa-trash"></i></button>
+
+                </div> -->
+                <div class="back-to-shop"><a href="./card/card.html">&leftarrow;</a><span class="text-muted">Back to
+                        shop</span></div>
+            </div>
+
+            <div class="col-md-4 summary">
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <p>TOTAL PRICE</p>
+                    <p><span class="total"
+                            style="display: inline; color: black; font-size: 20px; font-weight: bold;"></span> &dollar;
+                    </p>
+                </div>
+                <button class="btn" onclick="calcPrice()">CHECKOUT</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // total
+        function calcItems() {
+            var price = document.getElementsByClassName('number-price')
+            document.getElementsByClassName('items-number')[0].innerHTML = price.length
+            let sum = 0;
+            for (let i = 0; i < price.length; i++) {
+                sum += Number(price[i].innerHTML)
+            }
+            document.getElementsByClassName('total')[0].innerHTML = `${sum}`
+        }
+        calcItems()
+        function addToCard(ev) {
+            let parent = ev.target.parentElement
+            console.log(parent.children)
+            let img = parent.children[1]
+            console.log(img.src)
+        }
+        function removeParents(node) {
+            // console.log()
+            // document.getElementById('btn-rm')
+            console.log(document.getElementById('btn-rm').parentNode)
+            document.getElementById(('btn-rm')).parentNode.remove()
+            calcItems()
+
+        }
+        function calcPrice() {
+            var allprice = document.getElementsByClassName('number-price')
+            let su = 0
+            for (let i = 0; i < allprice.length; i++) {
+                su += Number(allprice[i].innerHTML)
+            }
+            document.getElementsByClassName('total')[0].innerHTML = `${su}`
+            console.log(allprice)
+            console.log(su)
+            calcItems()
+
+        }
+
+    </script>
+</body>
+
+</html>
