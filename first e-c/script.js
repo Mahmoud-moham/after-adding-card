@@ -1,10 +1,15 @@
 var cart = document.querySelector(".cart-box");
-console.log(cart)
+// console.log(cart)
+let carBoxClass = document.querySelector(".prduct-card-home")
+let cartBtn = document.querySelector(".cart-btn")
 var userCard = document.querySelector(".user");
-document.querySelector(".cart-btn").onclick = () => {
+cartBtn.onclick = () => {
+  showInCard(localobj, carBoxClass)
   cart.classList.toggle("active");
   userCard.classList.remove("active");
+
 };
+
 
 document.querySelector(".user-btn").onclick = () => {
   userCard.classList.toggle("active");
@@ -19,7 +24,14 @@ if (localStorage.getItem("username")) {
   userCard.classList.remove("active");
 }
 
+// add event click on button checkout
+function goToCardPage() {
+  // let checkoutButton = document.querySelector('.btn')
+  window.open('card.html', 'blanck')
+}
 
+// add event click on icon card to show product in check out menu
+// let cartIcon = document.querySelector('') 
 
 {
   /*
@@ -129,15 +141,16 @@ function setProductFromId(id_) {
       localStorage.setItem(id_, JSON.stringify(i))
     }
   })
-  window.open('card.html', 'blanck')
+
 }
 
 // ********************************
-let carBoxClass = document.getElementsByClassName('car-box')
+// let carBoxClass = document.querySelector(".prduct-card-home")
 // let cartBoxProduct = document.getElementsByClassName('cart-box')
 let localobj = localStorage
-console.log(carBoxClass)
+// console.log(carBoxClass)
 function showInCard(localobj, divProduct) {
+  divProduct.innerHTML = ''
   for (let iterator in localobj) {
     if (typeof localobj[iterator] == 'string') {
       var objProduct = JSON.parse(localobj[iterator])
@@ -157,7 +170,9 @@ function showInCard(localobj, divProduct) {
 
   }
 }
-showInCard(localobj, cart)
+// showInCard(localobj, carBoxClass)
+// showInCard(localobj, cart)
+// addin action to
 /* ========================*/
 // class="delCart"  **************** button delete 
 let delCartClass = document.getElementsByClassName('delCart')
@@ -192,24 +207,24 @@ loginBtn.addEventListener("click", (e) => {
     alert("Incorrect username or password.");
   }
 });
-logout_btn.addEventListener("click", function () {
-  localStorage.clear();
-  UserName.innerHTML = "";
-});
+// logout_btn.addEventListener("click", function () {
+//   localStorage.clear();
+//   UserName.innerHTML = "";
+// });
 
-var swiper = new Swiper(".swiper-container", {
-  spaceBetween: 30,
-  centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// var swiper = new Swiper(".swiper-container", {
+//   spaceBetween: 30,
+//   centeredSlides: true,
+//   autoplay: {
+//     delay: 2500,
+//     disableOnInteraction: false,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
