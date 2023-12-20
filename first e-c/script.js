@@ -135,7 +135,15 @@ function getId() {
 }
 
 function setProductFromId(id_) {
+  if (!localStorage.getItem(id_)) {
+    localStorage.setItem(`counter${id_}`, 1)
+  } else {
+    let counter = localStorage.getItem(`counter${id_}`);
+    ++counter
+    localStorage.setItem(`counter${id_}`, counter)
+  }
   obj.map((i) => {
+
     if (i.id == id_) {
       console.log(i)
       localStorage.setItem(id_, JSON.stringify(i))
@@ -152,7 +160,7 @@ let localobj = localStorage
 function showInCard(localobj, divProduct) {
   divProduct.innerHTML = ''
   for (let iterator in localobj) {
-    if (typeof localobj[iterator] == 'string') {
+    if (typeof localobj[+iterator] == 'string') {
       var objProduct = JSON.parse(localobj[iterator])
       console.log(objProduct)
       divProduct.innerHTML += `
@@ -207,10 +215,12 @@ loginBtn.addEventListener("click", (e) => {
     alert("Incorrect username or password.");
   }
 });
-// logout_btn.addEventListener("click", function () {
-//   localStorage.clear();
-//   UserName.innerHTML = "";
-// });
+logout_btn.addEventListener("click", function () {
+  localStorage.removeItem('username');
+  localStorage.removeItem('Password');
+  localStorage.removeItem('Email');
+  UserName.innerHTML = "";
+});
 
 // var swiper = new Swiper(".swiper-container", {
 //   spaceBetween: 30,

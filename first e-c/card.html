@@ -107,11 +107,52 @@
         .total {
             background-color: #01ab0f;
             border-radius: 5px;
+
+
         }
 
         .p1 {
             width: 100px;
             text-align: center;
+        }
+
+        .count {
+            font-size: 20px;
+            font-weight: bold;
+            width: 40px;
+        }
+
+
+
+        .section-price {
+            text-align: center;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .p-price-total {
+            font-weight: bold;
+            font-size: 40px;
+            margin: 0px 10px;
+        }
+
+        .payment {
+            width: 100%;
+            background-color: gainsboro;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .payment label,
+        input {
+            width: 30%;
+            margin: 10px;
+            height: 40px;
+            font-size: 30px;
         }
     </style>
 </head>
@@ -135,54 +176,85 @@
                 <button onclick="clacTotalPrice()" class="total-btn">calculate total</button>
             </div>
         </section>
-        <section style="text-align: center; width: 40%; display: flex; justify-content: center; align-items: center;">
+        <section class="section-price" style="display: flex; flex-direction: column; justify-content: start;">
+            <div style="display: flex;">
+                <p class="p-price-total">Price:</p>
+                <p class="p-price-total"><span class="total">0</span><span
+                        style="font-size: 30px; margin-left: 10px;">.&euro;</span> </p>
 
-            <p style="font-weight: bold; font-size: 40px; "><span class="total">0</span> LE</p>
+            </div>
+            <div class="payment">
+
+                <div><label for="">name :</label>
+                    <input type="text">
+                </div>
+
+
+                <div><label for="">number :</label>
+                    <input type="text">
+                </div>
+
+                <div><label for="">address :</label>
+                    <input type="text">
+                </div>
+                <div><input type="submit" name="" id=""></div>
+            </div>
+            </div>
+            </div>
         </section>
+
     </main>
+
     <!-- ========================================= -->
     <script>
         var divAllProduct = document.getElementsByClassName('all-product')[0]
         var productDiv = document.getElementsByClassName('product')[0]
         var Price = document.getElementsByClassName('priceAd')
+        let countNumber = document.getElementsByClassName('count')
+
         let local = localStorage
 
         window.onload = function () {
-            // console.log(local)
             for (let iterator in local) {
-                if (typeof local[iterator] == 'string') {
+                // console.log(iterator)
+                if (typeof local[+iterator] == 'string' && isFinite(iterator)) {
                     var objProduct = JSON.parse(local[iterator])
-                    console.log(objProduct)
                     divAllProduct.innerHTML += `
                     <div class="product">
                         <img src="${objProduct.image}" alt="" class="img">
                         <h4 class="titile">${objProduct.title}</h4>
                         <p class='p1'><span class="priceAd">${objProduct.price}</span> &euro;</p>
-                        
+                        <input type='number' value='${localStorage.getItem(`counter${objProduct.id}`)}' class='count'></input>
                         <button class='btn-del' onclick="deleteProduct(${objProduct.id},this)">delete</button>
                     </div>
                     `
                 }
 
             }
+            clacTotalPrice()
 
         }
 
         function deleteProduct(id, ev) {
-            alert(ev.parentNode)
-            console.log(local.getItem(id))
-            local.removeItem(id)
-            ev.parentNode.remove()
-            clacTotalPrice()
+            let valConfirm = confirm('you will delete Product : \n' + ev.parentNode.querySelector('.titile').innerHTML)
+
+            if (valConfirm.valueOf()) {
+                local.removeItem(id)
+                ev.parentNode.remove()
+                clacTotalPrice()
+            }
+            else {
+                confirm('product not deleted')
+            }
+
         }
         function clacTotalPrice() {
             var sum = 0;
             for (let num = 0; num < Price.length; num++) {
-                sum += Number(Price[num].innerHTML)
-                console.log(Price[num].innerHTML)
+                sum += Number(Price[num].innerHTML) * Number(countNumber[num].value)
 
             }
-            console.log(Math.round(sum))
+
             document.getElementsByClassName('total')[0].innerHTML = Math.round(sum)
         }
 
