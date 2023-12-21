@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Women Gallery</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js"
+            integrity="sha512-Dm5UxqUSgNd93XG7eseoOrScyM1BVs65GrwmavP0D0DujOA8mjiBfyj71wmI2VQZKnnZQsSWWsxDKNiQIqk8sQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+    </head>
+
+    <body>
+        <header id="header">
+            <div class="logo">
+                <a href="#" class="logo-a">
+                    <img id="logo-img" src="img/4m logo.webp" alt="" />
+                </a>
+            </div>
+
+            <div class="nav-C">
+                <ul class="navbar">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                </ul>
+            </div>
+            <div class="header-icon">
+                <button class="cart-btn">
+                    <box-icon name="cart"></box-icon>
+                </button>
+            </div>
+
+            <div class="cart-box">
+                <div class="prduct-card-home"></div>
+                <div class="total-chek">
+                    <a class="btn" id="btn-chekcout" onclick="goToCardPage()"
+                        >Checkout</a
+                    >
+                </div>
+            </div>
+        </header>
+        <section class="product" id="product">
+            <div class="products-container">
+                <section class="women"></section>
+            </div>
+        </section>
+
+        <script src="addToLocal.js"></script>
+        <script>
+            function appendFooter() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "index.html", true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var parser = new DOMParser();
+                        var data = parser.parseFromString(
+                            xhr.responseText,
+                            "text/html"
+                        );
+                        var footer = data.getElementById("footer");
+                        document.body.appendChild(footer);
+                    }
+                };
+
+                xhr.send();
+            }
+            window.onload = function () {
+                // appendHeader();
+                // appendProducts();
+
+                appendFooter();
+            };
+            function appendProducts() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "index.html", true);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var parser = new DOMParser();
+                        var data = parser.parseFromString(
+                            xhr.responseText,
+                            "text/html"
+                        );
+                        var product = data.getElementById("product");
+
+                        document.body.appendChild(product);
+                    }
+                };
+
+                xhr.send();
+            }
+
+            // Call the functions
+            let womenSec = document.querySelector(".women");
+            document.addEventListener("DOMContentLoaded", () => {
+                const url = "pro.json";
+
+                fetch(url)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        data.forEach((item) => {
+                            let { id, title, image, rating, price, category } =
+                                item;
+
+                            const productContainer = document.querySelector(
+                                ".products-container"
+                            );
+                            if (productContainer) {
+                                if (category == "women's clothing") {
+                                    const newProduct =
+                                        document.createElement("div");
+                                    newProduct.classList.add("box");
+
+                                    newProduct.innerHTML = `
+                            <img src="${image}" alt="${title}" />
+                            <div class="content">
+                            <h2 class="PName">${title}</h2>
+                            <box-icon type="solid" name="star"></box-icon>
+                            <box-icon type="solid" name="star"></box-icon>
+                            <box-icon type="solid" name="star"></box-icon>
+                            <box-icon type="solid" name="star"></box-icon>
+                            <box-icon name="star-half" type="solid"></box-icon>
+                            <br />
+                            <span class="PPrice">EGP ${price} </span>
+                                <button class="addToCart" onclick='setProductFromId(${id})'">
+                                <i  class="fa-solid fa-cart-plus"></i>
+                                </button>
+                            </div>
+                        `;
+                                    womenSec.appendChild(newProduct);
+                                }
+                            } else {
+                                console.log("No container");
+                            }
+                        });
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+            });
+        </script>
+    </body>
+</html>
