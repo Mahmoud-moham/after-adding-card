@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Men Gallery</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../css/style.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -21,13 +21,13 @@
         <header id="header">
             <div class="logo">
                 <a href="#" class="logo-a">
-                    <img id="logo-img" src="img/4m logo.webp" alt="" />
+                    <img id="logo-img" src="../img/4m logo.webp" alt="" />
                 </a>
             </div>
 
             <div class="nav-C">
                 <ul class="navbar">
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="women.html">Women</a></li>
                     <li><a href="kids.html">Kids</a></li>
                 </ul>
@@ -36,9 +36,6 @@
                 <button class="cart-btn">
                     <box-icon name="cart"></box-icon>
                 </button>
-                <!-- <button class="user-btn">
-                    <box-icon type="solid" name="user"></box-icon>
-                </button> -->
             </div>
 
             <div class="cart-box">
@@ -56,7 +53,7 @@
             </div>
         </section>
 
-        <script src="addToLocal.js"></script>
+        <script src="../js/addToLocal.js"></script>
         <script>
             function appendFooter() {
                 var xhr = new XMLHttpRequest();
@@ -79,30 +76,11 @@
             window.onload = function () {
                 appendFooter();
             };
-            function appendProducts() {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "index.html", true);
-
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState == 4 && xhr.status == 200) {
-                        var parser = new DOMParser();
-                        var data = parser.parseFromString(
-                            xhr.responseText,
-                            "text/html"
-                        );
-                        var product = data.getElementById("product");
-
-                        document.body.appendChild(product);
-                    }
-                };
-
-                xhr.send();
-            }
 
             // Call the functions
             let menSec = document.querySelector(".men");
             document.addEventListener("DOMContentLoaded", () => {
-                const url = "pro.json";
+                const url = "../js/pro.json";
 
                 fetch(url)
                     .then((response) => response.json())

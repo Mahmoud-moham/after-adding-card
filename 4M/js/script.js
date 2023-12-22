@@ -3,9 +3,17 @@ let carBoxClass = document.querySelector(".prduct-card-home")
 let cartBtn = document.querySelector(".cart-btn")
 var userCard = document.querySelector(".user");
 cartBtn.onclick = () => {
-  showInCard(localobj, carBoxClass)
-  cart.classList.toggle("active");
-  userCard.classList.remove("active");
+  if (localStorage.getItem('username') && localStorage.getItem('Password')) {
+    showInCard(localobj, carBoxClass)
+    cart.classList.toggle("active");
+    userCard.classList.remove("active");
+  }
+  else {
+
+    window.open('Register.html', '_blanck')
+
+  }
+
 };
 
 document.querySelector(".user-btn").onclick = () => {
@@ -22,14 +30,6 @@ if (localStorage.getItem("username")) {
   userCard.classList.remove("active");
 }
 
-function goToCardPage() {
-  window.open('card.html', 'blanck')
-}
-
-
-
-
-
 // /==================================== show data and set to Add to card =================================================/ 
 
 let obj;
@@ -38,32 +38,40 @@ let containerCardProducts = document.querySelector('.products-container')
 
 function getData() {
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "pro.json");
+  xhttp.open("GET", "../js/pro.json");
   xhttp.send();
   xhttp.onload = function () {
     obj = JSON.parse(xhttp.responseText)
 
   }
-
 }
 getData()
 
 // counter func//
 function setProductFromId(id_) {
-  if (!localStorage.getItem(id_)) {
-    localStorage.setItem(`counter${id_}`, 1)
-  } else {
-    let counter = localStorage.getItem(`counter${id_}`);
-    ++counter
-    localStorage.setItem(`counter${id_}`, counter)
-  }
-  obj.map((i) => {
 
-    if (i.id == id_) {
-      console.log(i)
-      localStorage.setItem(id_, JSON.stringify(i))
+  if (localStorage.getItem('username') && localStorage.getItem('Password')) {
+
+
+
+    if (!localStorage.getItem(id_)) {
+      localStorage.setItem(`counter${id_}`, 1)
+    } else {
+      let counter = localStorage.getItem(`counter${id_}`);
+      ++counter
+      localStorage.setItem(`counter${id_}`, counter)
     }
-  })
+    obj.map((i) => {
+
+      if (i.id == id_) {
+        localStorage.setItem(id_, JSON.stringify(i))
+      }
+    })
+  }
+  else {
+    window.open('Register.html', '_blanck')
+  }
+
 
 }
 
@@ -105,7 +113,7 @@ var womenSec = document.querySelector(".women")
 var kidsSec = document.querySelector(".kids")
 
 document.addEventListener("DOMContentLoaded", () => {
-  const url = "./pro.json";
+  const url = "../js/pro.json";
   var menCounter = 0
   var womenCounter = 0
   var kidsCounter = 0
@@ -246,4 +254,5 @@ logout_btn.addEventListener("click", function () {
   localStorage.removeItem('Password');
   localStorage.removeItem('Email');
   UserName.innerHTML = "";
+  localStorage.clear()
 });

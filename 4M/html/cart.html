@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Cart</title>
+        <style>
+            * {
+                margin: 0px;
+                padding: 0px;
+            }
+            body {
+                background: linear-gradient(to bottom right, #fda702, #afaaaa);
+            }
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .product {
+                padding: 10px;
+                margin: 10px 0px;
+                border: 3px solid grey;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                box-sizing: border-box;
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: 1px 1px 10px;
+            }
+
+            .product img {
+                width: 150px;
+                height: 100px;
+                margin: 0px;
+                box-shadow: 1px 1px 10px;
+                border-radius: 10px;
+            }
+
+            .product h3 {
+                width: 10%;
+            }
+
+            .all-product {
+                display: flex;
+                flex-direction: column;
+                /* background-color: #01ab0f; */
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .button-check {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 0px;
+                margin-top: 10px;
+            }
+
+            .total-btn {
+                padding: 0.7rem 1rem;
+                background-color: #fda702;
+                color: #fff;
+                display: inline-block;
+                font-weight: 500;
+                text-transform: uppercase;
+                border-radius: 300px 10px;
+            }
+
+            .total-btn:hover {
+                background-color: #01ab0f;
+                size: 1.1;
+                color: #fff;
+                transition: 0.2s;
+                font-size: medium;
+                font-weight: 799;
+                letter-spacing: 1px;
+            }
+
+            .header {
+                text-align: center;
+                padding: 20px 0px;
+            }
+
+            .btn-del {
+                height: 30px;
+                /* width: 100px; */
+                width: 70px;
+                margin: 0px 20px 0px;
+                font-size: 20px;
+                font-weight: 700;
+                background-color: rgba(211, 46, 24, 0.856);
+                border-radius: 10px;
+            }
+
+            .priceAd {
+                font-size: 20px;
+                font-weight: 700;
+            }
+            .price-container {
+                display: flex;
+                justify-content: center;
+            }
+            .titile {
+                text-wrap: wrap;
+                margin: 10px;
+                font-size: 16px;
+            }
+
+            .total {
+                background-color: #01ab0f;
+                border-radius: 5px;
+            }
+
+            .p1 {
+                width: 100px;
+                text-align: center;
+            }
+
+            .count {
+                font-size: 20px;
+                font-weight: bold;
+                width: 40px;
+            }
+
+            section {
+                text-align: center;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            .section-price {
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+            .p-price-total {
+                font-weight: bold;
+                font-size: 40px;
+                margin: 0px 10px;
+            }
+
+            .payment {
+                width: 100%;
+                /* background-color: #eea823; */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 50px 0;
+                border-radius: 24px;
+                padding: 20px 0;
+            }
+            .payment div {
+                display: flex;
+                flex-direction: column;
+            }
+            .payment input {
+                border-radius: 24px;
+                padding: 8px 12px;
+            }
+            .payment label,
+            input {
+                margin: 10px;
+                font-size: 1.5em;
+            }
+            .visa {
+                display: flex;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="header">
+            <h1>Add to cart</h1>
+        </header>
+        <main>
+            <section style="margin: 10px; width: 50%">
+                <div class="all-product"></div>
+            </section>
+            <div class="button-check">
+                <button onclick="clacTotalPrice()" class="total-btn">
+                    calculate total
+                </button>
+            </div>
+
+            <section class="section-price">
+                <div class="price-container">
+                    <p class="p-price-total">Price:</p>
+                    <p class="p-price-total">
+                        <span class="total">0</span
+                        ><span style="font-size: 30px; margin-left: 10px"
+                            >.&euro;</span
+                        >
+                    </p>
+                </div>
+                <form id="payment-method" class="payment">
+                    <div>
+                        <label for="UserName">Name on Card :</label>
+                        <input
+                            id="userName"
+                            type="text"
+                            name="cardOwner"
+                            value=""
+                            required
+                        />
+                    </div>
+
+                    <div class="visa">
+                        <label for="">Credit card number :</label>
+                        <input
+                            id="visaN"
+                            type="text"
+                            name="cardNumber"
+                            value=""
+                            minlength="16"
+                            maxlength="16"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <input
+                            id="submit-btn"
+                            type="submit"
+                            name="submit"
+                            value="submit"
+                        />
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- ========================================= -->
+        <script>
+            var divAllProduct =
+                document.getElementsByClassName("all-product")[0];
+            var productDiv = document.getElementsByClassName("product")[0];
+            var Price = document.getElementsByClassName("priceAd");
+            let countNumber = document.getElementsByClassName("count");
+
+            let local = localStorage;
+
+            window.onload = function () {
+                for (let iterator in local) {
+                    // console.log(iterator)
+                    if (
+                        typeof local[+iterator] == "string" &&
+                        isFinite(iterator)
+                    ) {
+                        var objProduct = JSON.parse(local[iterator]);
+                        divAllProduct.innerHTML += `
+                    <div class="product">
+                        <img src="${objProduct.image}" alt="" class="img">
+                        <h4 class="titile">${objProduct.title}</h4>
+                        <p class='p1'><span class="priceAd">${
+                            objProduct.price
+                        }</span> &euro;</p>
+                        <input type='number' value='${localStorage.getItem(
+                            `counter${objProduct.id}`
+                        )}' class='count'></input>
+                        <button class='btn-del' onclick="deleteProduct(${
+                            objProduct.id
+                        },this)">delete</button>
+                    </div>
+                    `;
+                    }
+                }
+                clacTotalPrice();
+            };
+
+            function deleteProduct(id, ev) {
+                let valConfirm = confirm(
+                    "you will delete Product : \n" +
+                        ev.parentNode.querySelector(".titile").innerHTML
+                );
+
+                if (valConfirm.valueOf()) {
+                    local.removeItem(id);
+                    ev.parentNode.remove();
+                    clacTotalPrice();
+                } else {
+                    confirm("product not deleted");
+                }
+            }
+            function clacTotalPrice() {
+                var sum = 0;
+                for (let num = 0; num < Price.length; num++) {
+                    sum +=
+                        Number(Price[num].innerHTML) *
+                        Number(countNumber[num].value);
+                }
+
+                document.getElementsByClassName("total")[0].innerHTML =
+                    Math.round(sum);
+            }
+
+            let submit = document.getElementById("submit-btn");
+            let visa = document.getElementById("visaN");
+            let regex = /^[0-9]{16}$/;
+            visa.addEventListener("keydown", function (e) {
+                if (!(e.key >= "0" && e.key <= "9")) {
+                    e.preventDefault();
+                }
+            });
+            submit.addEventListener("click", function (e) {
+                e.preventDefault();
+                if (regex.test(visa.value)) {
+                    alert("Thanks for Purchasing");
+                } else {
+                    alert(
+                        "Invalid Visa number. Please enter a valid 16-digit number."
+                    );
+                }
+            });
+        </script>
+    </body>
+</html>

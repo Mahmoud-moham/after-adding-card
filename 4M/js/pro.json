@@ -242,7 +242,7 @@
     {
         "id": 21,
         "title": "Men's T-shirt",
-        "image": "img/json_data/1.jpg",
+        "image": "../img/json_data/1.jpg",
         "rating": 4.5,
         "price": 300,
         "category": "men's clothing"
@@ -250,7 +250,7 @@
     {
         "id": 22,
         "title": "Women's Jeans",
-        "image": "img/json_data/2.jpg",
+        "image": "../img/json_data/2.jpg",
         "rating": 4.2,
         "price": 450,
         "category": "women's clothing"
@@ -258,21 +258,21 @@
     {
         "id": 23,
         "title": "Sports Shoes",
-        "image": "img/men/3.avif",
+        "image": "../img/men/3.avif",
         "rating": 4.8,
         "price": 600
     },
     {
         "id": 24,
         "title": "Leather Jacket",
-        "image": "img/json_data/4.jpg",
+        "image": "../img/json_data/4.jpg",
         "rating": 4.7,
         "price": 800
     },
     {
         "id": 25,
         "title": "Casual Watch",
-        "image": "img/json_data/5.jpg",
+        "image": "../img/json_data/5.jpg",
         "rating": 4.3,
         "price": 150,
         "category": "men's clothing"
@@ -280,7 +280,7 @@
     {
         "id": 26,
         "title": "Men's T-shirt",
-        "image": "img/json_data/7.webp",
+        "image": "../img/json_data/7.webp",
         "rating": 4.5,
         "price": 300,
         "category": "men's clothing"
@@ -288,7 +288,7 @@
     {
         "id": 27,
         "title": "Men's Jeans",
-        "image": "img/json_data/6.webp",
+        "image": "../img/json_data/6.webp",
         "rating": 4.2,
         "price": 450,
         "category": "men's clothing"
@@ -296,7 +296,7 @@
     {
         "id": 28,
         "title": "Men's Sports Shoes",
-        "image": "img/json_data/8.jpg",
+        "image": "../img/json_data/8.jpg",
         "rating": 4.8,
         "price": 600,
         "category": "men's clothing"
@@ -304,7 +304,7 @@
     {
         "id": 29,
         "title": "Women's Blouse",
-        "image": "img/json_data/9.webp",
+        "image": "../img/json_data/9.webp",
         "rating": 4.6,
         "price": 350,
         "category": "women's clothing"
@@ -312,7 +312,7 @@
     {
         "id": 30,
         "title": "Women's Skirt",
-        "image": "img/json_data/10.jpg",
+        "image": "../img/json_data/10.jpg",
         "rating": 4.4,
         "price": 500,
         "category": "women's clothing"
@@ -320,7 +320,7 @@
     {
         "id": 31,
         "title": "Women's High Heels",
-        "image": "img/json_data/11.jpg",
+        "image": "../img/json_data/11.jpg",
         "rating": 4.9,
         "price": 700,
         "category": "women's clothing"
@@ -328,7 +328,7 @@
     {
         "id": 32,
         "title": "Kids' Cartoon T-shirt",
-        "image": "img/json_data/12.jpg",
+        "image": "../img/json_data/12.jpg",
         "rating": 4.7,
         "price": 200,
         "category": "kid's clothing"
@@ -336,7 +336,7 @@
     {
         "id": 33,
         "title": "Kids' Jeans",
-        "image": "img/json_data/13.jpg",
+        "image": "../img/json_data/13.jpg",
         "rating": 4.2,
         "price": 350,
         "category": "kid's clothing"
@@ -344,7 +344,7 @@
     {
         "id": 34,
         "title": "Kids' Sneakers",
-        "image": "img/json_data/14.jpg",
+        "image": "../img/json_data/14.jpg",
         "rating": 4.5,
         "price": 400,
         "category": "kid's clothing"
@@ -352,7 +352,7 @@
     {
         "id": 35,
         "title": "Men's Hooded Sweatshirt",
-        "image": "img/men/1.jpeg",
+        "image": "../img/men/1.jpeg",
         "rating": 4.3,
         "price": 25.99,
         "category": "men's clothing"
@@ -360,7 +360,7 @@
     {
         "id": 36,
         "title": "Men's Chinos",
-        "image": "img/men/2.jpeg",
+        "image": "../img/men/2.jpeg",
         "rating": 4.0,
         "price": 34.5,
         "category": "men's clothing"
@@ -368,7 +368,7 @@
     {
         "id": 37,
         "title": "Men's Running Shoes",
-        "image": "img/men/3.webp",
+        "image": "../img/men/3.webp",
         "rating": 4.5,
         "price": 55.0,
         "category": "men's clothing"
@@ -376,7 +376,7 @@
     {
         "id": 38,
         "title": "Men's Formal Shirt",
-        "image": "img/men/4.jpeg",
+        "image": "../img/men/4.jpeg",
         "rating": 4.2,
         "price": 29.99,
         "category": "men's clothing"
@@ -384,7 +384,7 @@
     {
         "id": 39,
         "title": "Men's Winter Jacket",
-        "image": "img/men/5.jpg",
+        "image": "../img/men/5.jpg",
         "rating": 4.7,
         "price": 79.95,
         "category": "men's clothing"
@@ -392,7 +392,7 @@
     {
         "id": 40,
         "title": "Men's Dress Shoes",
-        "image": "img/men/6.webp",
+        "image": "../img/men/6.webp",
         "rating": 4.4,
         "price": 49.5,
         "category": "men's clothing"
@@ -400,7 +400,7 @@
     {
         "id": 41,
         "title": "Men's Graphic T-shirt",
-        "image": "img/men/7.webp",
+        "image": "../img/men/7.webp",
         "rating": 4.6,
         "price": 18.99,
         "category": "men's clothing"
@@ -408,7 +408,7 @@
     {
         "id": 42,
         "title": "Men's Cargo Shorts",
-        "image": "img/men/8.webp",
+        "image": "../img/men/8.webp",
         "rating": 4.0,
         "price": 22.75,
         "category": "men's clothing"
@@ -416,7 +416,7 @@
     {
         "id": 43,
         "title": "Men's Trousers",
-        "image": "img/men/9.jpeg",
+        "image": "../img/men/9.jpeg",
         "rating": 4.8,
         "price": 12.99,
         "category": "men's clothing"
@@ -424,7 +424,7 @@
     {
         "id": 44,
         "title": "Women's Maxi Dress",
-        "image": "img/woman pic/1.webp",
+        "image": "../img/woman pic/1.webp",
         "rating": 4.8,
         "price": 39.95,
         "category": "women's clothing"
@@ -432,7 +432,7 @@
     {
         "id": 45,
         "title": "Women's Cardigan",
-        "image": "img/woman pic/4.jpg",
+        "image": "../img/woman pic/4.jpg",
         "rating": 4.1,
         "price": 28.75,
         "category": "women's clothing"
@@ -440,7 +440,7 @@
     {
         "id": 46,
         "title": "Women's Ankle Boots",
-        "image": "img/woman pic/3.jpeg",
+        "image": "../img/woman pic/3.jpeg",
         "rating": 4.6,
         "price": 49.99,
         "category": "women's clothing"
@@ -448,7 +448,7 @@
     {
         "id": 47,
         "title": "Women's Leggings",
-        "image": "img/woman pic/4.jpg",
+        "image": "../img/woman pic/4.jpg",
         "rating": 4.4,
         "price": 18.5,
         "category": "women's clothing"
@@ -456,7 +456,7 @@
     {
         "id": 48,
         "title": "Women's Blouse",
-        "image": "img/woman pic/5.jpeg",
+        "image": "../img/woman pic/5.jpeg",
         "rating": 4.3,
         "price": 33.99,
         "category": "women's clothing"
@@ -464,7 +464,7 @@
     {
         "id": 49,
         "title": "Women's Sunglasses",
-        "image": "img/woman pic/6.jpeg",
+        "image": "../img/woman pic/6.jpeg",
         "rating": 4.7,
         "price": 20.0,
         "category": "women's clothing"
@@ -472,7 +472,7 @@
     {
         "id": 50,
         "title": "Women's Sandals",
-        "image": "img/woman pic/7.webp",
+        "image": "../img/woman pic/7.webp",
         "rating": 4.5,
         "price": 27.99,
         "category": "women's clothing"
@@ -480,7 +480,7 @@
     {
         "id": 51,
         "title": "Women's Watch",
-        "image": "img/woman pic/8.jpeg",
+        "image": "../img/woman pic/8.jpeg",
         "rating": 4.2,
         "price": 44.5,
         "category": "women's clothing"
@@ -488,7 +488,7 @@
     {
         "id": 52,
         "title": "Women's Backpack",
-        "image": "img/woman pic/9.webp",
+        "image": "../img/woman pic/9.webp",
         "rating": 4.9,
         "price": 35.0,
         "category": "women's clothing"
@@ -496,7 +496,7 @@
     {
         "id": 53,
         "title": "Kids' Dinosaur Pajamas",
-        "image": "img/kids pic/1.jpeg",
+        "image": "../img/kids pic/1.jpeg",
         "rating": 4.9,
         "price": 17.99,
         "category": "kid's clothing"
@@ -504,7 +504,7 @@
     {
         "id": 54,
         "title": "Kids' Tutu Skirt",
-        "image": "img/kids pic/2.webp",
+        "image": "../img/kids pic/2.webp",
         "rating": 4.2,
         "price": 14.75,
         "category": "kid's clothing"
@@ -512,7 +512,7 @@
     {
         "id": 55,
         "title": "Kids' Superhero T-shirt",
-        "image": "img/kids pic/3.webp",
+        "image": "../img/kids pic/3.webp",
         "rating": 4.5,
         "price": 11.99,
         "category": "kid's clothing"
@@ -520,7 +520,7 @@
     {
         "id": 56,
         "title": "Kids' Denim Shorts",
-        "image": "img/kids pic/4.webp",
+        "image": "../img/kids pic/4.webp",
         "rating": 4.1,
         "price": 19.5,
         "category": "kid's clothing"
@@ -528,7 +528,7 @@
     {
         "id": 57,
         "title": "Kids' Sneakers",
-        "image": "img/kids pic/5.jpeg",
+        "image": "../img/kids pic/5.jpeg",
         "rating": 4.5,
         "price": 29.99,
         "category": "kid's clothing"
@@ -536,7 +536,7 @@
     {
         "id": 58,
         "title": "Kids' Unicorn Onesie",
-        "image": "img/kids pic/6.jpg",
+        "image": "../img/kids pic/6.jpg",
         "rating": 4.6,
         "price": 22.99,
         "category": "kid's clothing"
@@ -544,7 +544,7 @@
     {
         "id": 59,
         "title": "Kids' Backpack",
-        "image": "img/kids pic/7.webp",
+        "image": "../img/kids pic/7.webp",
         "rating": 4.4,
         "price": 18.75,
         "category": "kid's clothing"
@@ -552,7 +552,7 @@
     {
         "id": 60,
         "title": "Kids' Raincoat",
-        "image": "img/kids pic/8.webp",
+        "image": "../img/kids pic/8.webp",
         "rating": 4.0,
         "price": 14.99,
         "category": "kid's clothing"
@@ -560,7 +560,7 @@
     {
         "id": 61,
         "title": "Kids' Watch",
-        "image": "img/kids pic/9.webp",
+        "image": "../img/kids pic/9.webp",
         "rating": 4.8,
         "price": 9.95,
         "category": "kid's clothing"
@@ -568,7 +568,7 @@
     {
         "id": 62,
         "title": "Kids' School Shoes",
-        "image": "img/kids pic/10.jpg",
+        "image": "../img/kids pic/10.jpg",
         "rating": 4.2,
         "price": 24.5,
         "category": "kid's clothing"

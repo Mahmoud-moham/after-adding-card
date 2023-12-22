@@ -268,7 +268,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     align-items: center;
     gap: 1.5rem;
-    background: url("img/red-shopping-bag-red-background-sale-banner-design_41050-4899.jpg")
+    background: url("../img/red-shopping-bag-red-background-sale-banner-design_41050-4899.jpg")
         center/cover no-repeat;
     color: white;
     padding: 10px 90px;
